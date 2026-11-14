@@ -59,3 +59,18 @@ O SupplyAI foi desenvolvido como projeto de portfólio, com o propósito de apli
 ---
 
 **Desenvolvido como projeto de portfólio em Engenharia de Produção.**
+## Demonstração da aplicação
+
+### Dashboard
+![Dashboard do SupplyAI](screenshots/dashboard.png)
+
+### Gestão de produtos
+![Gestão de produtos](screenshots/produtos.png)
+
+### Relatórios
+![Relatórios do SupplyAI](screenshots/relatorios.png)
+
+![Segunda visualização dos relatórios](screenshots/relatorios2.png)
+
+### Assistente inteligente
+![Assistente inteligente do SupplyAI](screenshots/assistente.png)
