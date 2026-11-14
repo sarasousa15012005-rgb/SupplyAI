@@ -70,6 +70,37 @@ O SupplyAI possui um assistente inteligente integrado ao Google Gemini, respons�
 
 A integração utiliza uma Supabase Edge Function, que processa as solicitações e consulta as informações necessárias antes de gerar a resposta.
 
+## Arquitetura e funcionamento do assistente
+
+O assistente inteligente do SupplyAI utiliza uma arquitetura integrada entre a interface web, o banco de dados e um serviço de inteligência artificial.
+
+### Fluxo de funcionamento
+
+1. **Entrada da pergunta:** o usuário envia uma pergunta pela interface desenvolvida em React e TypeScript.
+2. **Autenticação:** a aplicação verifica a sessão do usuário por meio do Supabase Auth.
+3. **Processamento:** a pergunta é encaminhada para uma Supabase Edge Function, responsável por validar a solicitação e consultar os dados.
+4. **Consulta ao banco:** os produtos são recuperados da tabela `produtos`, respeitando as políticas de Row Level Security (RLS).
+5. **Análise dos indicadores:** a função calcula o ponto de pedido, a cobertura de estoque, a quantidade necessária para reposição e a situação de cada produto.
+6. **Integração com IA:** os dados estruturados e a pergunta são enviados à API do Google Gemini para geração de uma resposta contextualizada.
+7. **Retorno:** a resposta é enviada à aplicação e apresentada ao usuário na interface de conversa.
+
+### Tecnologias e responsabilidades
+
+| Tecnologia | Responsabilidade |
+|---|---|
+| React e TypeScript | Interface e interação com o usuário |
+| Supabase Auth | Autenticação |
+| Supabase Database | Armazenamento dos produtos |
+| Supabase RLS | Controle de acesso aos dados |
+| Supabase Edge Functions | Processamento das solicitações |
+| Google Gemini API | Interpretação das perguntas e geração de respostas |
+
+A integração mantém a chave da API do Gemini no ambiente do servidor, evitando sua exposição direta no código da interface.
+
+### Tratamento de falhas
+
+A Edge Function possui validações de autenticação, dados de entrada e respostas da API. Também prevê uma tentativa com um modelo alternativo do Gemini em determinadas situações de indisponibilidade ou limitação do serviço.
+
 ## Segurança e controle de acesso
 
 O sistema utiliza autenticação pelo Supabase e políticas de Row Level Security (RLS) para controlar o acesso aos dados.
