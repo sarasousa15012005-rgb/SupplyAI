@@ -16,6 +16,43 @@ Desenvolver uma ferramenta que facilite o acompanhamento dos níveis de estoque,
 - **Relatórios:** visualização de informações e indicadores relacionados ao estoque.
 - **Assistente com inteligência artificial:** permite realizar perguntas sobre o estoque e receber respostas contextualizadas com base nos dados dos produtos.
 
+## Indicadores e metodologia de cálculo
+
+O SupplyAI utiliza parâmetros de gestão de estoque para monitorar os produtos e identificar necessidades de reposição.
+
+### 1. Ponto de pedido
+
+Indica o nível de estoque em que deve ser iniciada uma reposição.
+
+**Fórmula:**
+
+Ponto de Pedido = (Consumo Diário × Prazo de Entrega) + Estoque de Segurança
+
+### 2. Cobertura de estoque
+
+Estima por quantos dias o estoque disponível consegue atender ao consumo.
+
+**Fórmula:**
+
+Cobertura = Estoque Atual / Consumo Diário
+
+### 3. Necessidade de reposição
+
+Calcula a quantidade necessária para alcançar novamente o ponto de pedido quando o estoque está abaixo desse nível.
+
+**Fórmula:**
+
+Quantidade para Reposição = Ponto de Pedido - Estoque Atual
+
+### Parâmetros utilizados
+
+- Estoque atual;
+- Estoque de segurança;
+- Consumo médio diário;
+- Prazo de entrega do fornecedor.
+
+Esses indicadores permitem acompanhar a situação dos produtos, antecipar necessidades de compra e apoiar a tomada de decisão.
+
 ## Tecnologias utilizadas
 
 - React
