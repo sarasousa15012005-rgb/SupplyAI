@@ -127,6 +127,13 @@ O SupplyAI foi desenvolvido como projeto de portfólio, com o propósito de apli
 ---
 
 **Desenvolvido como projeto de portfólio em Engenharia de Produção.**
+## Acesso à aplicação
+
+**Demonstração online:** https://supply-ai-mpju.vercel.app/
+
+O SupplyAI está disponível para demonstração
+por meio da aplicação publicada na Vercel.
+
 ## Demonstração da aplicação
 
 ### Dashboard
